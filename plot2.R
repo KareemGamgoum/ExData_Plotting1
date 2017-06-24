@@ -21,9 +21,11 @@ data <- subset(data, Date == as.Date("2007-02-01") | Date == as.Date("2007-02-02
 
 
 # Construct Plot 2
+
+# Save to a PNG file with a width of 480 pixels and a height of 480 pixels.
+png('plot2.png', width=480, height=480)
+
 par(mfrow = c(1,1))
 plot(data$DateTime, data$Global_active_power, type="l", xlab="", ylab="Global Active Power (kilowatts)")
 
-# Save to a PNG file with a width of 480 pixels and a height of 480 pixels.
-dev.copy(png,"plot2.png", width=480, height=480)
 dev.off()

@@ -21,10 +21,12 @@ data <- subset(data, Date == as.Date("2007-02-01") | Date == as.Date("2007-02-02
 
 
 # Construct Plot 1
+
+# Save to a PNG file with a width of 480 pixels and a height of 480 pixels.
+png('plot1.png', width=480, height=480)
+
 par(mfrow = c(1,1))
 hist(data$Global_active_power, col="red", main="Global Active Power",
      xlab="Global Active Power (kilowatts)")
 
-# Save to a PNG file with a width of 480 pixels and a height of 480 pixels.
-dev.copy(png,"plot1.png", width=480, height=480)
 dev.off()

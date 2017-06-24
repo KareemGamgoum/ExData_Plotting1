@@ -21,6 +21,10 @@ data <- subset(data, Date == as.Date("2007-02-01") | Date == as.Date("2007-02-02
 
 
 # Construct Plot 4
+
+# Save to a PNG file with a width of 480 pixels and a height of 480 pixels.
+png('plot4.png', width=480, height=480)
+
 par(mfrow = c(2,2))
 plot(data$DateTime, data$Global_active_power, type="l", xlab="", ylab="Global Active Power")
 plot(data$DateTime, data$Voltage, type="l", xlab="datetime", ylab="Voltage")
@@ -32,6 +36,4 @@ legend("topright", col=c("black", "red", "blue"), lwd=c(1,1,1), bty = "n",
 plot(data$DateTime, data$Global_reactive_power, type="l", xlab="datetime", ylab="Global_reactive_power")
 
 
-# Save to a PNG file with a width of 480 pixels and a height of 480 pixels.
-dev.copy(png,"plot4.png", width=480, height=480)
 dev.off()
